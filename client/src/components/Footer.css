@@ -1,0 +1,16 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--mist-dim);
+}
+
+.footer p {
+  margin: 0.2rem 0;
+}
+
+.footer__muted {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}

@@ -1,0 +1,72 @@
+.timeline {
+  position: relative; /* necesario para poder ubicar la línea vertical adentro, en una posición exacta */
+  max-width: 46rem;
+  margin: 0 auto; /* centra la sección horizontalmente en la pantalla */
+  padding: 5rem 1.5rem 3rem;
+}
+
+.timeline__intro {
+  max-width: 30rem;
+  margin: 0 0 3.5rem;
+}
+
+.timeline__intro-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist-dim);
+}
+
+.timeline__intro-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  text-transform: uppercase;
+  margin: 0.5rem 0 0.9rem;
+  color: var(--chalk);
+}
+
+.timeline__intro-text {
+  color: var(--mist);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Esta es la línea vertical que atraviesa todas las tarjetas por detrás.
+   Se posiciona de forma absoluta (position: absolute), es decir,
+   se ubica con coordenadas exactas dentro de .timeline, sin ocupar
+   espacio propio en el flujo normal de la página. */
+.timeline__rail-line {
+  position: absolute;
+  top: 13.5rem; /* empieza debajo del título de introducción */
+  bottom: 6rem; /* termina antes del final de la sección */
+  left: calc(
+    1.5rem + 2.25rem - 1px
+  ); /* la alineamos justo debajo de los círculos de las tarjetas */
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--line) 0%,
+    var(--line) 85%,
+    var(--ember-dim) 100%
+  );
+}
+
+.timeline__rows {
+  position: relative;
+}
+
+/* En pantallas angostas (celular), la columna del círculo es más chica
+   (lo vimos en PhaseCard.css), así que acá ajustamos la posición de
+   la línea para que siga alineada debajo de los círculos */
+@media (max-width: 640px) {
+  .timeline {
+    padding: 3.5rem 1.25rem 2rem;
+  }
+
+  .timeline__rail-line {
+    left: calc(1.25rem + 1.125rem - 1px);
+    top: 12rem;
+  }
+}

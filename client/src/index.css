@@ -1,0 +1,67 @@
+:root {
+  /* Color — noche de estadio */
+  --ink: #090d16; /* fondo base, cielo nocturno de estadio */
+  --pitch: #121a2c; /* superficies / tarjetas */
+  --pitch-raised: #182338; /* tarjetas elevadas / hover */
+  --line: #26314a; /* bordes, líneas de cancha */
+  --floodlight: #5ec8ff; /* acento frío — luces del estadio */
+  --floodlight-dim: #5ec8ff33;
+  --ember: #e8b34c; /* acento cálido — trofeo / final */
+  --ember-dim: #e8b34c26;
+  --chalk: #f3f5f9; /* texto primario */
+  --mist: #93a0b8; /* texto secundario */
+  --mist-dim: #5c6884; /* texto terciario / deshabilitado */
+
+  --font-display: "Big Shoulders Display", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--chalk);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--floodlight);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
